@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:4001"; // Backend URL
+const BASE_URL = "https://server-3yvm.onrender.com"; // Backend URL
 
 const storeToken = (token) => {
     if (token) {
