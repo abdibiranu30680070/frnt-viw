@@ -1,0 +1,69 @@
+/* General Styles */
+.analytics-container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #dddada;
+    margin-bottom: 30px;
+  }
+  
+  /* Stats Grid */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .stat-card {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .stat-card h3 {
+    font-size: 18px;
+    color: #f2f9fc;
+  }
+  
+  .stat-card p {
+    font-size: 24px;
+    color: #f3f1f1;
+    font-weight: bold;
+  }
+  
+  /* Charts Container */
+  .charts-container {
+    display: flex;
+    flex-direction: column; /* Stack charts vertically for testing */
+    gap: 20px;
+  }
+  
+  
+  .chart {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Fixed width for testing */
+    height: 300px; /* Fixed height for testing */
+  }
+  
+  .chart h4 {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  /* Loading Text */
+  .loading {
+    text-align: center;
+    font-size: 18px;
+  }
+  

@@ -1,0 +1,19 @@
+.feedback-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.feedback-list li {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.feedback-list strong {
+  font-weight: bold;
+}
+
+.feedback-list small {
+  color: #888;
+  font-size: 0.8em;
+}

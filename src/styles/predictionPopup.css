@@ -1,0 +1,165 @@
+/* Popup Container */
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+  animation: fadeIn 0.5s ease-in-out; /* Fade in the entire container */
+}
+
+.popup-content {
+  max-width: 500px;
+  width: 100%;
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease-out; /* Slide-in animation for the popup */
+}
+
+/* Fade-in animation for popup container */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide-in animation for popup content */
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Countdown Timer */
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  animation: bounceIn 1s ease-out; /* Add a bounce effect to countdown */
+}
+
+.countdown-timer span {
+  font-size: 50px;
+  font-weight: bold;
+  color: #e74c3c;
+  animation: fadeInText 1s ease-out; /* Fade in the countdown number */
+}
+
+/* Fade-in text animation */
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Bounce-in animation for countdown */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Prediction Result */
+.prediction-result {
+  font-weight: bold;
+  animation: fadeInText 1s ease-out; /* Fade in the prediction result */
+}
+
+.risk-level {
+  font-size: 14px;
+  text-transform: capitalize;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: white;
+  animation: fadeInText 1s ease-out;
+}
+
+.risk-low {
+  background-color: #27ae60;
+}
+
+.risk-medium {
+  background-color: #f39c12;
+}
+
+.risk-high {
+  background-color: #e74c3c;
+}
+
+/* Percentage Circle */
+.percentage-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #3498db;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #3498db;
+  animation: scaleIn 0.5s ease-out; /* Scale-in animation for percentage circle */
+}
+
+/* Scale-in animation for percentage circle */
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Recommendation Section */
+.recommendation-section h4 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  animation: fadeInText 1s ease-out; /* Fade in the recommendation header */
+}
+
+.recommendation-section p {
+  color: #7f8c8d;
+  animation: fadeInText 1s ease-out; /* Fade in the recommendation text */
+}
+
+/* Close Button */
+.close-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  animation: fadeInText 1s ease-out; /* Fade in the close button */
+}
+
+.close-button:hover {
+  background-color: #c0392b;
+}

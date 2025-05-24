@@ -1,0 +1,74 @@
+/* patientCard.css */
+
+.patient-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Add some spacing between cards */
+    flex: 0 0 calc(50% - 20px); /* Each card takes 50% width with a 20px gap */
+}
+
+.patient-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.patient-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #555;
+}
+
+.detail-item span {
+  font-weight: bold;
+  margin-right: 5px;
+}
+/* Print Button Styles */
+.print-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.print-button:hover {
+  background-color: #45a049;
+}
+@media print {
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  .patient-card {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin: 0;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .print-button {
+    display: none; /* Hide print button when printing */
+  }
+
+  .patient-details {
+    margin-top: 20px;
+  }
+
+  .detail-item {
+    margin-bottom: 10px;
+  }
+}

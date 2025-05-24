@@ -1,0 +1,350 @@
+/* Reset and Base Styles */
+:root {
+  --primary-dark: #1a2a44;
+  --accent: #ffc107;
+  --accent-hover: #e68900;
+  --text-light: #ffffff;
+  --text-dark: #1a2a44;
+  --bg-dark: rgba(26, 42, 68, 0.9);
+  --bg-semi: rgba(26, 42, 68, 0.5);
+  --transition: 0.3s ease-in-out;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: var(--text-dark);
+}
+
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--bg-semi);
+  z-index: 1000;
+  padding: 1rem 1.5rem;
+  transition: background var(--transition), padding var(--transition), box-shadow var(--transition);
+}
+
+.navbar.scrolled {
+  background: var(--bg-dark);
+  padding: 0.75rem 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+#navbar .container {
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo {
+  font-family: 'Yuji Mai', serif;
+  font-size: clamp(1.5rem, 3vw, 1.75rem);
+  font-weight: 800;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.logo:hover,
+.logo:focus {
+  color: var(--accent);
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+  display: none;
+  background: transparent;
+  border: 2px solid var(--text-light);
+  border-radius: 6px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.navbar-toggler.toggled {
+  transform: rotate(90deg);
+  border-color: var(--accent);
+}
+
+.navbar-toggler-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: block;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  transition: background-image var(--transition);
+}
+
+.navbar-toggler.toggled .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 193, 7, 1)' stroke-width='2' stroke-linecap='round' d='M6 6l18 18M6 24l18-18'/%3E%3C/svg%3E");
+}
+
+/* Navbar Collapse */
+.navbar-collapse {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-light);
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  transition: color var(--transition);
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--accent);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width var(--transition);
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after {
+  width: 100%;
+}
+
+.cta-button {
+  background: var(--accent);
+  color: var(--text-dark);
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+
+.cta-button:hover,
+.cta-button:focus {
+  background: var(--accent-hover);
+  color: var(--text-light);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+/* Footer Styles */
+.footer {
+  background: var(--primary-dark);
+  color: var(--text-light);
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footer a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.footer a:hover,
+.footer a:focus {
+  color: var(--accent);
+}
+
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+.socials-icons{
+ display: flex;
+  justify-content:end;
+  gap: 1rem;
+
+}
+
+.social-icons a {
+  font-size: 1.75rem;
+  color: var(--text-light);
+  transition: color var(--transition), transform var(--transition);
+}
+
+.social-icons a:hover,
+.social-icons a:focus {
+  color: var(--accent);
+  transform: scale(1.15);
+}
+
+#made p,a{
+  font-size:20px;
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .navbar-nav {
+    gap: 1.5rem;
+  }
+  .navbar-collapse-wrapper {
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease-in-out;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+  }
+  .navbar-toggler {
+    display: block;
+  }
+  .cta-button {
+    padding: 0.5rem 1.25rem;
+  }
+  .socials-icons{
+    justify-content:center;
+  }
+  #made{
+   font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--bg-dark);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    box-shadow: var(--shadow);
+  }
+  .navbar-collapse-wrapper {
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease-in-out;
+  }
+  .navbar-collapse.show {
+    max-height: 35rem;
+    opacity: 1;
+  }
+
+  .navbar-nav {
+    align-items: center;
+    padding: 2rem 0;
+    gap: 1.75rem;
+    margin-left: 0;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    padding: 0.75rem;
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .cta-button {
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+  }
+  .socials-icons{
+    justify-content:center;
+  }
+  #made{
+   font-size: 19px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.5rem 0.75rem;
+  }
+  .navbar-collapse-wrapper {
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease-in-out;
+  }
+
+  .navbar-nav {
+    margin-left: 0;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .navbar-toggler {
+    padding: 0.4rem;
+  }
+
+  .navbar-toggler-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 0.6rem 1.5rem;
+  }
+
+  .footer {
+    padding: 2rem 0.75rem;
+  }
+  .socials-icons{
+     justify-content:center;
+   }
+   #made{
+    font-size: 15px;
+   }
+}
+
+.navbar-open {
+  max-height: 500px; /* adjust depending on number of nav items */
+}
+
+

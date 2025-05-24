@@ -1,0 +1,133 @@
+/* history.css */
+
+/* Container styling for the entire page */
+#history-container {
+  background-color: #f8f9fa;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 6px;
+}
+
+/* Header styling */
+#history-container  header {
+  margin-bottom: 30px;
+}
+
+#history-container header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #007bff;
+}
+
+#history-container header p {
+  font-size: 1.1rem;
+  color: #6c757d;
+}
+
+/* Flexbox for the row, with proper alignment */
+ #history-container .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Space between columns */
+  justify-content: center; /* Center the content */
+}
+
+/* Column Styling: Adjusts based on screen size */
+.col {
+  flex: 1 1 calc(33.333% - 30px); /* Default to 3 items per row, minus the gap */
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Make it 2 columns on medium-sized screens */
+@media (max-width: 1200px) {
+  .col {
+    flex: 1 1 calc(50% - 30px); /* 2 items per row */
+  }
+}
+
+/* Single column on small screens */
+@media (max-width: 768px) {
+  .col {
+    flex: 1 1 100%; /* 1 item per row */
+  }
+}
+
+/* Styling for the card */
+.card {
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  border-radius: 8px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* Hover effect for the card */
+.card:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Card body styling */
+.card-body {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Title styling */
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+/* Text within the card */
+.card-text {
+  font-size: 1.1rem;
+  color: #6c757d;
+  margin-bottom: 15px;
+}
+
+/* Footer for action buttons or additional info */
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+  background-color: transparent;
+}
+
+/* Loading spinner style */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  margin: 20px auto;
+}
+
+/* Alert Styling */
+.alert {
+  font-size: 1.1rem;
+  border-radius: 0.25rem;
+  padding: 15px;
+}
+
+/* Info alert */
+.alert-info {
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+  color: #0c5460;
+}
+
+/* Success alert */
+.alert-success {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}
+
+/* Danger alert */
+.alert-danger {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}

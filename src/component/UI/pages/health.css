@@ -1,0 +1,311 @@
+/* health.css */
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Intro Section */
+.intro-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.intro-section__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.6);
+  z-index: 1;
+  transition: filter 0.3s ease;
+}
+
+.intro-section__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+  max-width: 900px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.intro-section__content h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.intro-section__content p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Health Blog Section */
+.health-blog {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 4rem 2rem; /* Overwrites 30px with more flexible rem units */
+ 
+}
+
+.health-blog__title {
+  text-align: center;
+  font-size: 2.75rem; /* Combines 36px and 2.75rem, preferring rem */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 3rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.health-blog__title::after {
+  content: '';
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, #00bcd4, #4caf50);
+  position: absolute;
+  transition: all 0.4s ease;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+.health-blog__title:hover::after{
+  width: 40%;
+  background: linear-gradient(90deg, #00cec9, #6c5ce7);
+  box-shadow: 0 0 8px #00cec9aa;
+}
+
+/* Blog Section Common Styles */
+.blog-section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: #ffffff8b;
+  border-radius: 12px; /* Slightly larger than 8px for consistency */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Stronger shadow than 0 4px 8px */
+  transition: transform 0.3s ease;
+}
+
+.blog-section:hover {
+  transform: translateY(-5px);
+}
+
+/* Heading Styles */
+.blog-section__heading {
+  font-size: 2rem; /* Combines 28px and 2rem, preferring rem */
+  color: #4CAF50;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.blog-section__heading::after {
+  content: '';
+  width: 50px;
+  height: 3px;
+  background: #00bcd4;
+  position: absolute;
+  transition: all 0.4s ease;
+  bottom: 0;
+  left: 0;
+}
+.blog-section__heading:hover{
+  text-decoration: none;
+  transition: all 0.4s ease-out;
+}
+.blog-section__heading:hover::after{
+width: 15%;
+
+}
+
+/* List Styles */
+.blog-section__list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.blog-section__list-item {
+  position: relative;
+  padding: 0.8rem 0 0.8rem 2rem;
+  font-size: 1.1rem; /* Combines 18px and 1.1rem, preferring rem */
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.blog-section__list-item::before {
+  content: '✔';
+  color: #4CAF50;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Article Styles */
+.blog-section__article {
+  margin-bottom: 2rem;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-section__article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+.blog-section__article-title {
+  font-size: 1.5rem; /* Combines 24px and 1.5rem */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.75rem; /* Slightly less than 10px for consistency */
+}
+
+.blog-section__article-title:hover {
+  color: #00bcd4;
+}
+
+.blog-section__text {
+  font-size: 1rem; /* Combines 18px and 1rem */
+  color: #555;
+  line-height: 1.8; /* Slightly more generous than 1.7 */
+}
+
+/* Quote Styles */
+.blog-section__quote {
+  padding: 1.5rem 1.5rem 1.5rem 2.5rem; /* Adjusted for left border and quote mark */
+  margin: 1rem auto;
+  background: #f9f9f9;
+  border-left: 5px solid #4CAF50;
+  font-style: italic;
+  color: #444; /* Overwrites #4caf50 to keep text readable */
+  border-radius: 8px;
+  position: relative;
+  font-size: 20px;
+  max-width: 900px;
+}
+
+.blog-section__quote::before {
+  content: '“';
+  font-size: 2rem;
+  color: #4CAF50;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+}
+
+/* Note Styles */
+.blog-section__note {
+  font-size: 1rem;
+  color: #777;
+  line-height: 1.6;
+  background: #eef8ee;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .intro-section__content h1 {
+    font-size: 2.5rem;
+  }
+
+  .intro-section__content p {
+    font-size: 1rem;
+  }
+
+  .health-blog {
+    padding: 2rem 1rem;
+  }
+
+  .health-blog__title {
+    font-size: 2rem; /* Overwrites 28px with rem */
+  }
+
+  .blog-section {
+    padding: 1.5rem;
+  }
+
+  .blog-section__heading {
+    font-size: 1.75rem; /* Overwrites 24px with rem */
+  }
+
+  .blog-section__list-item {
+    font-size: 1rem; /* Overwrites 16px */
+  }
+
+  .blog-section__article {
+    padding: 15px;
+  }
+
+  .blog-section__article-title {
+    font-size: 1.25rem; /* Overwrites 22px */
+  }
+
+  .blog-section__text {
+    font-size: 16px;
+  }
+
+  .blog-section__quote {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-section__content {
+    padding: 1rem;
+  }
+
+  .intro-section__content h1 {
+    font-size: 2rem;
+  }
+
+  .intro-section__content p {
+    font-size: 0.9rem;
+  }
+
+  .health-blog__title {
+    font-size: 1.75rem;
+  }
+
+  .blog-section {
+    padding: 1rem;
+  }
+
+  .blog-section__list-item {
+    font-size: 1rem;
+    padding-left: 1.5rem;
+  }
+}

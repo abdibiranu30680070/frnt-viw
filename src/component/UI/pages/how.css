@@ -1,0 +1,302 @@
+/* Reset & Basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  overflow-x: hidden;
+}
+
+/* Header Section */
+.how-section1 .header {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  filter: brightness(0.65);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* ====================== */
+/* === Intro Styling === */
+/* ====================== */
+.intro-content {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  text-align: center;
+  max-width: 800px;
+  padding: 2rem;
+  z-index: 2;
+  animation: fadeInUp 1.2s ease-out both;
+}
+/* Main heading */
+.intro-content h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: slideDown 1.3s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+/* Subheading paragraph */
+.intro-content p {
+  font-size: 1.2rem;
+  color: #f0f0f0;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards;
+  animation-delay: 1s;
+}
+
+/* Gradient effect for emphasis */
+.gradient-text {
+  background: linear-gradient(90deg, #00b894, #6c5ce7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.highlight-text {
+  color: #00cec9;
+}
+.intro-content h1:hover {
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+
+/* ====================== */
+/* === Animations ======= */
+/* ====================== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  0%   { opacity: 0; transform: translateY(-40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
+/* Sections General */
+.how-section {
+  padding: 4rem 1.5rem;
+  background-color: #fff;
+  animation: fadeIn 1.2s ease-in;
+}
+
+.how-section:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+.how-section h2 {
+  text-align: center;
+  font-size: 2.3rem;
+  margin-bottom: 2rem;
+  color: #2d3436;
+  position: relative;
+}
+
+.how-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #00cec9;
+  transition: all 0.4s ease;
+}
+
+/* Animate on hover */
+.how-section h2:hover::after {
+  width: 70%;
+  background: linear-gradient(90deg, #00cec9, #6c5ce7);
+  box-shadow: 0 0 8px #00cec9aa;
+}
+
+/* FAQ Section */
+.faq-list {
+  max-width: 800px;
+  margin: auto;
+}
+
+.faq {
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.faq summary {
+  background-color: #00cec9;
+  color: white;
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.faq[open] summary {
+  background-color: #00b894;
+}
+
+.faq p {
+  background-color: #fefefe;
+  padding: 1rem;
+  font-size: 1rem;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Trust Section */
+.trust ul {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: auto;
+}
+
+.trust ul li {
+  font-size: 1.1rem;
+  padding: 0.6rem 0;
+  color: #2d3436;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.trust ul li::before {
+  content: "✔";
+  color: #00b894;
+  position: absolute;
+  left: 0;
+  font-size: 1rem;
+}
+
+/* Main Layout */
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.container {
+  flex: 2;
+  min-width: 300px;
+}
+
+.cont-right {
+  flex: 1;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 350px;
+  animation: fadeIn 1.5s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideUp {
+  0%   { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Phone (portrait) */
+@media (max-width: 575.98px) {
+  .intro-content {
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    top: 35%;
+    left: 10%;
+  }
+
+  .intro-content h1 {
+    font-size: 2rem;
+  }
+
+  .intro-content p {
+    font-size: 1.3rem;
+  }
+  .container h2{
+    font-size: 1.4rem;
+  }
+  .how-section h2:hover::after {
+    width:60%;}
+    .container summary{
+      font-size: 1rem;
+    }
+
+}
+
+/* Phone (landscape) */
+@media (min-width: 592px) and (max-width: 900px) { 
+  .intro-content {
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    top: 35%;
+    left: 10%;
+    
+  }
+
+  .intro-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .intro-content p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Tablet (portrait) */
+@media (min-width: 901px) and (max-width: 1024px) {
+ 
+}
+
+/* Tablet (landscape) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+  
+}
+/* Desktop */
+@media (min-width: 1281px) {
+  
+}

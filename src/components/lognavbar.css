@@ -1,0 +1,73 @@
+.metasebiya{
+  opacity: 0;
+}
+.dropdown-menu{
+  margin: 1.7rem  0rem;
+}
+
+/* Profile Dropdown Container */
+.profile-dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Show the dropdown when it's toggled */
+.dropdown-menu.show {
+  display: block;
+  opacity: 1;
+  animation: fadeIn 0.3s ease-out, slideDown 0.3s ease-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide-down animation */
+@keyframes slideDown {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Dropdown Menu Items */
+.dropdown-item {
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+
+
+@media (max-width: 768px) {
+ .profile-dropdown-container{
+  display: none;
+ }
+
+ .metasebiya{
+  opacity: 1;
+  padding-left: 4rem;
+ 
+ }
+
+.dropdown-menu{
+  margin: 1rem -2rem;
+}
+
+  }
+
+
+
+@media (max-width: 480px) {  }

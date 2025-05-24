@@ -1,0 +1,23 @@
+.admin-sidebar {
+  min-height: 100vh;
+  border-right: 2px solid #dee2e6;
+}
+
+.table td, .table th {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table thead th {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.alert {
+  font-size: 1rem;
+}
+
+/* h2 {
+  border-bottom: 2px solid #0d6efd;
+  padding-bottom: 0.5rem;
+} */

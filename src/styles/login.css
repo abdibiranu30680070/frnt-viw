@@ -1,0 +1,193 @@
+/* General Styles */
+
+
+#log{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-bottom: -7rem;
+}
+
+.card {
+  background: #ffffff; /* White card background */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift card slightly on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.form-control {
+  border: none;
+  border-bottom: 2px solid #cccccc; /* Bottom border for input fields */
+  border-radius: 0; /* Remove rounded corners */
+  padding: 10px 0;
+  font-size: 1rem;
+  transition: border-color 0.3s ease; /* Smooth border color transition */
+}
+
+.form-control:focus {
+  border-color: #2575fc; /* Highlight border on focus */
+  box-shadow: none; /* Remove default Bootstrap shadow */
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555555;
+  margin-bottom: 5px;
+  display: block;
+  text-align: left;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient button */
+  border: none;
+  border-radius: 25px; /* Pill-shaped button */
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  transition: transform 0.3s ease, background 0.3s ease; /* Smooth hover effect */
+}
+
+.btn-primary:hover {
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+  background: linear-gradient(135deg, #2575fc, #6a11cb); /* Reverse gradient */
+}
+
+.alert-danger {
+  background: #ffebee; /* Light red background */
+  color: #c62828; /* Dark red text */
+  border: 1px solid #ffcdd2; /* Border matching alert color */
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.divider {
+  position: relative;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #cccccc;
+  z-index: -1;
+}
+
+.divider span {
+  background: #ffffff; /* Match card background */
+  padding: 0 15px;
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+.social-buttons .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 25px; /* Pill-shaped buttons */
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333333;
+  transition: background 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+.social-buttons .btn:hover {
+  background: #f0f0f0; /* Light gray background on hover */
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.social-buttons img {
+  width: 20px;
+  height: 20px;
+}
+
+.text-decoration-none {
+  color: #2575fc; /* Link color */
+  font-weight: 500;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.text-decoration-none:hover {
+  color: #6a11cb; /* Darker blue on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    padding: 15px; /* Reduce padding for tablets */
+    font-size: clamp(0.8rem, 3vw, 0.9rem); /* Adjust font size */
+  }
+
+  h2 {
+    font-size: clamp(1.2rem, 4vw, 1.5rem); /* Smaller title for tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: 100%;
+    padding: 10px; /* Further reduce padding for phones */
+    font-size: clamp(0.7rem, 3vw, 0.8rem); /* Smaller font size */
+  }
+
+  h2 {
+    font-size: clamp(1rem, 4vw, 1.2rem); /* Even smaller title for phones */
+  }
+
+  .form-control {
+    font-size: clamp(0.7rem, 3vw, 0.8rem); /* Adjust input font size */
+  }
+
+  .btn-primary,
+  .social-buttons .btn {
+    font-size: clamp(0.7rem, 3vw, 0.8rem); /* Adjust button font size */
+  }
+}
+
+@media (orientation: landscape) and (max-width: 812px) {
+  body {
+    height: auto; /* Adjust height for landscape mode */
+    padding: 10px; /* Add padding to avoid edge cutoff */
+  }
+
+  #log {
+    height: auto; /* Adjust container height */
+    padding: 10px; /* Add padding */
+  }
+
+  .card {
+    width: 100%;
+    max-width: 350px; /* Reduce max-width for landscape */
+    padding: 15px; /* Adjust padding */
+  }
+}

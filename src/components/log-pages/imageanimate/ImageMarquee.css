@@ -1,0 +1,62 @@
+/* Container for the marquee */
+.marquee-container {
+  overflow: hidden; /* Hide overflow to create the marquee effect */
+  white-space: nowrap; /* Prevent images from wrapping to the next line */
+  width: 100%;
+  /* background-color: #f0f0f0; Optional: Add a background color */
+  padding: 10px 0; /* Add some padding for spacing */
+  position: relative; /* Required for gradient overlay */
+}
+
+/* Gradient overlay for fading effect at the edges */
+.marquee-container::before,
+.marquee-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width:15rem; /* Width of the fading effect */
+  z-index: 1; /* Ensure the gradient is above the images */
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+/* Left gradient overlay */
+.marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, rgb(192, 190, 190), rgba(240, 240, 240, 0));
+}
+/* 
+/* Right gradient overlay */
+.marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, rgb(200, 199, 199), rgba(118, 117, 117, 0));
+} 
+
+/* Content wrapper for the marquee */
+.marquee-content {
+  display: inline-block;
+  animation: marquee 200s linear infinite; /* Marquee animation */
+  padding-left: 100%; /* Push content to the right to create a seamless loop */
+}
+
+/* Individual images in the marquee */
+.marquee-image {
+  background-color: transparent;
+  display: inline-block;
+  height: 150px; /* Adjust height as needed */
+  margin: 0 10px; /* Add spacing between images */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  */
+  /* Optional: Add a subtle shadow */
+  z-index: 0; /* Ensure images are below the gradient overlay */
+}
+
+/* Marquee animation keyframes */
+@keyframes marquee {
+  from {
+    transform: translateX(0%); /* Start from the original position */
+  }
+  to {
+    transform: translateX(-100%); /* Move to the left by 100% of the content width */
+  }
+}

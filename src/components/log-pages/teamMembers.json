@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Abdi Biranu",
+    "position": "R/0025/13",
+    "description": "Software Engineer",
+    "photo": "./images/doctor2.jpg",
+    "socials": {
+      "facebook": "#",
+      "twitter": "#",
+      "linkedin": "#",
+      "instagram": "#"
+    }
+  },
+  {
+    "name": "Metasebbia Merkin Chirbo",
+    "position": "R/2079/13",
+    "description": "Software Engineer",
+    "photo": "./images/meti_x.jpg",
+    "socials": {
+      "facebook": "https://web.facebook.com/profile.php?id=61551597590852",
+      "twitter": "#",
+      "linkedin": "#",
+      "instagram": "https://www.instagram.com/metasebiamerkin/"
+    }
+  },
+  {
+    "name": "Merara Garoma",
+    "position": "R/2045/13",
+    "description": "Software Engineer.",
+    "photo": "./images/doctor1.jpg",
+    "socials": {
+      "facebook": "#",
+      "twitter": "#",
+      "linkedin": "#",
+      "instagram": "#"
+    }
+  },
+  {
+    "name": "Edosa Tariku",
+    "position": "R/1618/13",
+    "description": "Software Engineer.",
+    "photo": "./images/idosa.jpg",
+    "socials": {
+      "facebook": "#",
+      "twitter": "#",
+      "linkedin": "#",
+      "instagram": "#"
+    }
+  },
+  {
+    "name": "Umalkheyrat Saladin",
+    "position": "R/  /13",
+    "description": "Software Engineer",
+    "photo": "./images/doctor1.jpg",
+    "socials": {
+      "facebook": "#",
+      "twitter": "#",
+      "linkedin": "#",
+      "instagram": "#"
+    }
+  },
+  {
+    "name": "Rukiya Mahammad",
+    "position": "R/  /13",
+    "description": "Software Engineer",
+    "photo": "./images/ruki.jpg",
+    "socials": {
+      "facebook": "#",
+      "twitter": "#",
+      "linkedin": "#",
+      "instagram": "#"
+    }
+  },
+  {
+    "name": "Noah Taddase",
+    "position": "R/2388/13",
+    "description": "Software Engineer",
+    "photo": "./images/doctor1.jpg",
+    "socials": {
+      "facebook": "#",
+      "twitter": "#",
+      "linkedin": "#",
+      "instagram": "#"
+    }
+  }
+]
