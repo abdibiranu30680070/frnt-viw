@@ -5,6 +5,7 @@ import IsLoading from "../component/UI/Navbar/IsLoading";
 import Navbar from "../component/UI/Navbar/navbar";
 import Footer from "../component/UI/Navbar/footer";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom"; 
 
 const Login = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -118,9 +119,7 @@ const Login = () => {
 
                 <div className="text-center">
                   Don't have an account?{" "}
-                  <a href="/signup" className="text-decoration-none">
-                    Signup
-                  </a>
+                  <Link to="/signup" className="text-decoration-none">Signup</Link>
                 </div>
               </form>
             </div>
