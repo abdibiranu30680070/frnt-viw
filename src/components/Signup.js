@@ -64,7 +64,7 @@ const Signup = () => {
     try {
       const response = await signup(formData);
       console.log("Signup successful:", response);
-      navigate("/Login", { state: { signupSuccess: true } });
+      navigate("/login", { state: { signupSuccess: true } });
     } catch (error) {
       console.error("Signup error:", error);
       setErrorMessage(
@@ -151,7 +151,7 @@ const Signup = () => {
 
             <div className="text-center">
               Already have an account?{" "}
-              <Link to="/Login" className="text-decoration-none">
+              <Link to="/login" className="text-decoration-none">
                 Login
               </Link>
             </div>
