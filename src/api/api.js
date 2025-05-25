@@ -34,72 +34,22 @@ export const signup = async (userData) => {
     }
 };
 
-/**
- * Adds a new patient record and gets prediction results
- * @param {Object} patientData - Patient data to be submitted
- * @returns {Promise<Object>} The created patient record with prediction results
- * @throws {Error} If the request fails or validation errors occur
- */
 export const addPatient = async (patientData) => {
-  // Validate input
-  if (!patientData || typeof patientData !== 'object' || Object.keys(patientData).length === 0) {
-    throw new Error('Invalid patient data: Must provide a non-empty patient object');
-  }
-
   try {
-    const config = {
-      method: 'post',
-      url: `${BASE_URL}/api/patients/predict`, // More RESTful endpoint
+    const response = await axios.post(`${BASE_URL}/api/predict`, patientData, {
       headers: {
-        'Content-Type': 'application/json',
-        ...getAuthHeaders(), // Ensure this returns Authorization header
+        "Content-Type": "application/json",
+        ...getAuthHeaders(),
       },
-      data: patientData,
-      timeout: 15000, // 15 second timeout
-      validateStatus: (status) => status < 500, // Don't throw for 4xx errors
-    };
-
-    const response = await axios(config);
-
-    // Handle non-success responses
-    if (response.status >= 400) {
-      const errorMessage = response.data?.error?.message || 
-                         response.data?.message || 
-                         `Request failed with status ${response.status}`;
-      throw new Error(errorMessage);
-    }
-
-    // Validate response structure
-    if (!response.data || 
-        typeof response.data !== 'object' || 
-        !('prediction' in response.data)) {
-      throw new Error('Invalid response format from server');
-    }
-
-    return response.data;
-
-  } catch (error) {
-    console.error('Patient submission failed:', {
-      error: error.message,
-      endpoint: `${BASE_URL}/api/patients/predict`,
-      timestamp: new Date().toISOString(),
-      patientData: patientData, // Log sanitized data if needed
     });
-
-    // Enhance error messages based on error type
-    if (error.response) {
-      // Server responded with error status
-      const serverError = error.response.data?.error || error.response.data;
-      throw new Error(serverError?.message || 'Server rejected patient data');
-    } else if (error.request) {
-      // Request was made but no response received
-      throw new Error('Network error: Could not reach the server');
-    } else if (error instanceof Error) {
-      // Something happened in setting up the request
-      throw new Error(`Request error: ${error.message}`);
-    } else {
-      throw new Error('Unknown error occurred while adding patient');
-    }
+    return response.data;
+  } catch (error) {
+    console.error('Patient submission error:', {
+      error: error.message,
+      endpoint: `${BASE_URL}/api/predict`,
+      patientData: patientData // Log sanitized data
+    });
+    throw new Error(error.response?.data?.message || "Failed to add patient");
   }
 };
 
