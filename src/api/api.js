@@ -152,7 +152,7 @@ export const getAllPatientsForAdmin = async () => {
 // Reset Password - Set New Password
 export const resetPassword = async (token, newPassword) => {
     try {
-        const response = await axios.post(`${BASE_URL}/api/user/reset-password`, { token, newPassword });
+        const response = await axios.post(`${BASE_URL}/api/users/reset-password`, { token, newPassword });
         return response.data;
     } catch (error) {
         // Improved error handling to cover both response and other potential issues
