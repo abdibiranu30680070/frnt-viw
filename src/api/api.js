@@ -222,7 +222,7 @@ export const downloadCSVReport = async (dateFrom, dateTo, prediction) => {
   };
   export const fetchUserInfo = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/api/user`, {
+      const response = await axios.get(`${BASE_URL}/api/users/user`, {
         headers: getAuthHeaders(),
       });
       return response.data;
