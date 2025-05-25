@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://node-server-1gbx.onrender.com"; // Backend URL
+const BASE_URL = "https://node-server-emit.onrender.com"; // Backend URL
 
 const storeToken = (token) => {
     if (token) {
