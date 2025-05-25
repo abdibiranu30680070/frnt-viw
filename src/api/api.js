@@ -16,7 +16,7 @@ const getAuthHeaders = () => {
 // Authentication APIs
 export const login = async (userData) => {
     try {
-        const response = await axios.post(`${BASE_URL}/login`, userData);
+        const response = await axios.post(`${BASE_URL}/api/users/login`, userData);
         const { token } = response.data;
         storeToken(token);
         return response.data;
@@ -27,7 +27,7 @@ export const login = async (userData) => {
 
 export const signup = async (userData) => {
     try {
-        const response = await axios.post(`${BASE_URL}/register`, userData);
+        const response = await axios.post(`${BASE_URL}/api/users/register`, userData);
         return response.data;
     } catch (error) {
         throw new Error(error.response?.data?.message || "Signup failed");
@@ -37,7 +37,7 @@ export const signup = async (userData) => {
 // Patient APIs
 export const addPatient = async (patientData) => {
     try {
-        const response = await axios.post(`${BASE_URL}/predict`, patientData, {
+        const response = await axios.post(`${BASE_URL}/api/predict`, patientData, {
             headers: {
                 "Content-Type": "application/json",
                 ...getAuthHeaders(),
@@ -51,7 +51,7 @@ export const addPatient = async (patientData) => {
 
 export const getAllPatients = async () => {
     try {
-        const response = await axios.get(`${BASE_URL}/getAllPatients`, {
+        const response = await axios.get(`${BASE_URL}/api/getAllPatients`, {
             headers: {
                 "Content-Type": "application/json",
                 ...getAuthHeaders(),
@@ -76,7 +76,7 @@ export const deletePatient = async (id) => {
 
 export const getPatientDetails = async (id) => {
     try {
-        const response = await axios.get(`${BASE_URL}/getPatientDetails/${id}`, {
+        const response = await axios.get(`${BASE_URL}/api/getPatientDetails/${id}`, {
             headers: getAuthHeaders(),
         });
         return response.data;
@@ -152,7 +152,7 @@ export const getAllPatientsForAdmin = async () => {
 // Reset Password - Set New Password
 export const resetPassword = async (token, newPassword) => {
     try {
-        const response = await axios.post(`${BASE_URL}/reset-password`, { token, newPassword });
+        const response = await axios.post(`${BASE_URL}/api/user/reset-password`, { token, newPassword });
         return response.data;
     } catch (error) {
         // Improved error handling to cover both response and other potential issues
@@ -218,7 +218,7 @@ export const downloadCSVReport = async (dateFrom, dateTo, prediction) => {
   };
   export const fetchUserInfo = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/user`, {
+      const response = await axios.get(`${BASE_URL}/api/user`, {
         headers: getAuthHeaders(),
       });
       return response.data;
@@ -229,19 +229,19 @@ export const downloadCSVReport = async (dateFrom, dateTo, prediction) => {
 
   
   
- export const requestPasswordReset = async ({ email }) => {
-    try {
-      const response = await axios.post("http://localhost:4001/api/auth/forgot-password", { email });
-      return response.data;
-    } catch (error) {
-      console.error("API Error:", error.response?.data || error.message);
-      throw new Error(error.response?.data?.message || "Failed to request password reset");
-    }
-  };
+export const requestPasswordReset = async ({ email }) => {
+  try {
+    const response = await axios.post(`${BASE_URL}/api/users/forgot-password`, { email });
+    return response.data;
+  } catch (error) {
+    console.error("API Error:", error.response?.data || error.message);
+    throw new Error(error.response?.data?.message || "Failed to request password reset");
+  }
+};
   export const sendFeedback = async (feedbackMessage) => {
     try {
       const response = await axios.post(
-        `${BASE_URL}/feedback`,
+        `${BASE_URL}/api/feedback`,
         { message: feedbackMessage },
         { headers: getAuthHeaders() }
       );
