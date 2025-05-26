@@ -43,14 +43,13 @@ const WelcomeSection = ({ onLogout }) => {
             We use advanced algorithms to help you predict the likelihood of diabetes and take the necessary steps to prevent it.
           </p>
           <div className="mt-4">
-  <button
-    className="btn btn-primary me-2"
-    onClick={() =>
-      setActiveComponent(activeComponent === "addPatient" ? null : "addPatient")
-    }
-  >
-    {activeComponent === "addPatient" ? "Close Add Patient" : "Add Patient"}
-  </button>
+<button
+  className="btn btn-primary me-2"
+  onClick={() => navigate("/add-patient")}
+>
+  Add Patient
+</button>
+
 
   <button
     className="btn btn-outline-secondary me-2"
