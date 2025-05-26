@@ -12,7 +12,7 @@ const Signup = () => {
     name: "",
     email: "",
     password: "",
-    role: "user",
+    role: "admin",
   });
   const [errorMessage, setErrorMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
