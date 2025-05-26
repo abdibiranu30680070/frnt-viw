@@ -67,9 +67,7 @@ body::before {
 }
 
 .add-patient-sidebar {
-  position: fixed;
-  top: 20px;
-  right: 20px;
+  position: relative;
   width: 50%;
   max-width: 500px;
   background-color: #f0f0f0;
