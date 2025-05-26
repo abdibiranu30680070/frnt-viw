@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { addPatient } from "../api/api";
 import "../styles/addPatient.css";
-import { useNavigate } from "react-router-dom";
 import PredictionPopup from "./PredictionPopup";
 
 const AddPatient = ({ onCloseSidebar }) => {
@@ -29,24 +29,31 @@ const AddPatient = ({ onCloseSidebar }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-  
-    // Check if all required fields are filled
-    const requiredFields = [ "age", "bmi", "insulin",  "Glucose", "BloodPressure", "SkinThickness", "DiabetesPedigreeFunction"];
-    const missingFields = requiredFields.filter(field => !patientData[field]);
-  
+
+    const requiredFields = [
+      "age",
+      "bmi",
+      "insulin",
+      "Glucose",
+      "BloodPressure",
+      "SkinThickness",
+      "DiabetesPedigreeFunction",
+    ];
+    const missingFields = requiredFields.filter((field) => !patientData[field]);
+
     if (missingFields.length > 0) {
       alert(`Please fill out the following fields: ${missingFields.join(", ")}`);
       return;
     }
+
     setLoading(true);
     try {
       const response = await addPatient(patientData);
-      console.log("Full response:", response);
       setPredictionResult({
         prediction: response.prediction,
         precentage: response.precentage,
         riskLevel: response.riskLevel,
-        recommendation: response.recommendation
+        recommendation: response.recommendation,
       });
       setShowPredictionPopup(true);
     } catch (error) {
@@ -60,106 +67,126 @@ const AddPatient = ({ onCloseSidebar }) => {
     setShowPredictionPopup(false);
     navigate("/home");
   };
-  
 
   return (
     <div className="container" id="patient">
-      <button className="close-button" onClick={onCloseSidebar}>X</button>
+      {/* Navigation Buttons */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: "15px",
+        }}
+      >
+        <button className="btn btn-secondary" onClick={() => navigate("/home")}>
+          ← Back to Home
+        </button>
+        {onCloseSidebar && (
+          <button className="close-button" onClick={onCloseSidebar}>
+            X
+          </button>
+        )}
+      </div>
+
+      {/* Header */}
       <div className="add-patient">
         <h2 className="heading">Add Patient</h2>
         <p>Add a new patient and predict their diabetes risk</p>
       </div>
 
+      {/* Form */}
       <form onSubmit={handleSubmit}>
-  <div className="row">
-    <div className="form-group col-md-6">
-      <label>Age</label>
-      <input
-        type="number"
-        name="age"
-        value={patientData.age}
-        onChange={handleInputChange}
-        className="form-control"
-      />
-    </div>
-    <div className="form-group col-md-6">
-      <label>BMI</label>
-      <input
-        type="number"
-        name="bmi"
-        value={patientData.bmi}
-        onChange={handleInputChange}
-        className="form-control"
-      />
-    </div>
-    <div className="form-group col-md-6">
-      <label>Insulin</label>
-      <input
-        type="number"
-        name="insulin"
-        value={patientData.insulin}
-        onChange={handleInputChange}
-        className="form-control"
-      />
-    </div>
-    <div className="form-group col-md-6">
-      <label>Pregnancies</label>
-      <input
-        type="number"
-        name="Pregnancies"
-        value={patientData.Pregnancies}
-        onChange={handleInputChange}
-        className="form-control"
-      />
-    </div>
-    <div className="form-group col-md-6">
-      <label>Glucose</label>
-      <input
-        type="number"
-        name="Glucose"
-        value={patientData.Glucose}
-        onChange={handleInputChange}
-        className="form-control"
-      />
-    </div>
-    <div className="form-group col-md-6">
-      <label>Blood Pressure</label>
-      <input
-        type="number"
-        name="BloodPressure"
-        value={patientData.BloodPressure}
-        onChange={handleInputChange}
-        className="form-control"
-      />
-    </div>
-    <div className="form-group col-md-6">
-      <label>Skin Thickness</label>
-      <input
-        type="number"
-        name="SkinThickness"
-        value={patientData.SkinThickness}
-        onChange={handleInputChange}
-        className="form-control"
-      />
-    </div>
-    <div className="form-group col-md-6">
-      <label>Diabetes Pedigree Function</label>
-      <input
-        type="number"
-        step="0.01"
-        name="DiabetesPedigreeFunction"
-        value={patientData.DiabetesPedigreeFunction}
-        onChange={handleInputChange}
-        className="form-control"
-      />
-    </div>
-  </div>
-  <button className="btn btn-primary mt-3" type="submit" disabled={loading}>
-    {loading ? "Predicting..." : "Predict"}
-  </button>
-</form>
+        <div className="row">
+          <div className="form-group col-md-6">
+            <label>Age</label>
+            <input
+              type="number"
+              name="age"
+              value={patientData.age}
+              onChange={handleInputChange}
+              className="form-control"
+            />
+          </div>
+          <div className="form-group col-md-6">
+            <label>BMI</label>
+            <input
+              type="number"
+              name="bmi"
+              value={patientData.bmi}
+              onChange={handleInputChange}
+              className="form-control"
+            />
+          </div>
+          <div className="form-group col-md-6">
+            <label>Insulin</label>
+            <input
+              type="number"
+              name="insulin"
+              value={patientData.insulin}
+              onChange={handleInputChange}
+              className="form-control"
+            />
+          </div>
+          <div className="form-group col-md-6">
+            <label>Pregnancies</label>
+            <input
+              type="number"
+              name="Pregnancies"
+              value={patientData.Pregnancies}
+              onChange={handleInputChange}
+              className="form-control"
+            />
+          </div>
+          <div className="form-group col-md-6">
+            <label>Glucose</label>
+            <input
+              type="number"
+              name="Glucose"
+              value={patientData.Glucose}
+              onChange={handleInputChange}
+              className="form-control"
+            />
+          </div>
+          <div className="form-group col-md-6">
+            <label>Blood Pressure</label>
+            <input
+              type="number"
+              name="BloodPressure"
+              value={patientData.BloodPressure}
+              onChange={handleInputChange}
+              className="form-control"
+            />
+          </div>
+          <div className="form-group col-md-6">
+            <label>Skin Thickness</label>
+            <input
+              type="number"
+              name="SkinThickness"
+              value={patientData.SkinThickness}
+              onChange={handleInputChange}
+              className="form-control"
+            />
+          </div>
+          <div className="form-group col-md-6">
+            <label>Diabetes Pedigree Function</label>
+            <input
+              type="number"
+              step="0.01"
+              name="DiabetesPedigreeFunction"
+              value={patientData.DiabetesPedigreeFunction}
+              onChange={handleInputChange}
+              className="form-control"
+            />
+          </div>
+        </div>
 
+        <button className="btn btn-primary mt-3" type="submit" disabled={loading}>
+          {loading ? "Predicting..." : "Predict"}
+        </button>
+      </form>
 
+      {/* Prediction Result Popup */}
       {showPredictionPopup && (
         <PredictionPopup
           prediction={predictionResult?.prediction}
