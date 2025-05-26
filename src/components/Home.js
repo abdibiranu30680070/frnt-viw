@@ -27,6 +27,8 @@ import LogNavbar from "./lognavbar";
 const WelcomeSection = ({ onLogout }) => {
   const [activeComponent, setActiveComponent] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 300);
