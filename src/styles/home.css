@@ -68,7 +68,7 @@ body::before {
 
 .add-patient-sidebar {
   position: fixed;
-  top: 100px;
+  top: 20px;
   right: 20px;
   width: 50%;
   max-width: 500px;
@@ -96,4 +96,14 @@ body::before {
   max-width: 500px;
   margin-top: 20px; /* Add margin at the top to separate it from the buttons */
   display: grid;
+}
+@media (max-width: 768px) {
+  .add-patient-sidebar {
+    top: 140px; /* Push it lower to avoid navbar */
+    width: 90%;
+    right: 5%;
+    left: 5%;
+    max-width: none;
+    padding: 15px;
+  }
 }
