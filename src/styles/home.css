@@ -67,7 +67,7 @@ body::before {
 }
 
 .add-patient-sidebar {
-  position: relative;
+  position: fixed;
   width: 50%;
   max-width: 500px;
   background-color: #f0f0f0;
@@ -97,11 +97,12 @@ body::before {
 }
 @media (max-width: 768px) {
   .add-patient-sidebar {
-    top: 140px; /* Push it lower to avoid navbar */
-    width: 90%;
-    right: 5%;
-    left: 5%;
-    max-width: none;
+    top: 120px;       /* Push below navbar */
+    right: 10px;      /* Add spacing from right */
+    left: 10px;       /* Add spacing from left to center it */
+    width: auto;      /* Allow it to be fluid */
+    max-width: none;  /* Remove max width limit */
     padding: 15px;
+    border-radius: 10px;
   }
 }
