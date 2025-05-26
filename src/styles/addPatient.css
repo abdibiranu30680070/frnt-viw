@@ -101,7 +101,7 @@ form {
 @media (max-width: 768px) {
   .container {
     max-width: 90%;
-    margin-top: 20px;
+    margin-top: 100px;
   }
 
   .add-patient h2 {
