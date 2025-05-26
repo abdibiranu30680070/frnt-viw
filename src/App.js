@@ -26,7 +26,7 @@ import ViewHistoryfull from './components/viewhistoryfull';
 import ForgotPassword1 from './components/ForgotPassword1';
 import FeedbackDashboard1 from './components/FeedbackDashboard1';
 import FeedbackDashboard from './components/FeedbackDashboard';
-
+import AddPatient from './components/AddPatient';
 
 
 // import GetStarted from "./component/UI/pages/log";
@@ -71,6 +71,7 @@ function App() {
           <Route path="/admin/reports" element={<Reports />} /> 
            <Route path="/admin/FeedbackDashboard1" element={<FeedbackDashboard1/>} /> 
            <Route path="/admin/FeedbackDashboard" element={ <FeedbackDashboard/>} />
+           <Route path="/add-patient" element={<AddPatient />} />
            {/* New Reports Page */}
 
 
